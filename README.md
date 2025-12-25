@@ -6,10 +6,10 @@
 
 **AI가 당신의 꿈을 64개의 구체적인 실행 계획으로 변환합니다**
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/YOUR_USERNAME/manda-ai)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/koreadeveloper/manda)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-[🚀 Live Demo](https://manda-ai.vercel.app) · [📖 Documentation](#사용-방법) · [🐛 Report Bug](https://github.com/YOUR_USERNAME/manda-ai/issues)
+[🚀 Live Demo](https://manda.vercel.app) · [📖 Documentation](#사용-방법) · [🐛 Report Bug](https://github.com/koreadeveloper/manda/issues)
 
 </div>
 
@@ -63,8 +63,8 @@
 
 ```bash
 # 1. 레포지토리 클론
-git clone https://github.com/YOUR_USERNAME/manda-ai.git
-cd manda-ai
+git clone https://github.com/koreadeveloper/manda.git
+cd manda
 
 # 2. 의존성 설치
 npm install
@@ -137,7 +137,7 @@ vercel env add GROQ_API_KEY
 ## 📁 프로젝트 구조
 
 ```
-manda-ai/
+manda/
 ├── components/
 │   ├── AIModal.tsx      # AI 생성 모달
 │   ├── MandaCell.tsx    # 개별 셀 컴포넌트
@@ -192,7 +192,7 @@ MIT License - 자유롭게 사용, 수정, 배포할 수 있습니다.
 
 ## 💬 문의
 
-문제가 있거나 제안사항이 있으시면 [Issues](https://github.com/YOUR_USERNAME/manda-ai/issues)에 등록해주세요!
+문제가 있거나 제안사항이 있으시면 [Issues](https://github.com/koreadeveloper/manda/issues)에 등록해주세요!
 
 ---
 
@@ -200,6 +200,6 @@ MIT License - 자유롭게 사용, 수정, 배포할 수 있습니다.
 
 **⭐ 이 프로젝트가 도움이 되셨다면 Star를 눌러주세요! ⭐**
 
-Made with ❤️ by [Your Name]
+Made with ❤️ by koreadeveloper
 
 </div>
