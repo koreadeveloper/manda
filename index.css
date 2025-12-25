@@ -1,0 +1,122 @@
+/* Manda-AI Global Styles */
+
+/* ===== Font Setup ===== */
+.font-manda {
+  font-family: 'Do Hyeon', sans-serif;
+}
+
+/* ===== Text Wrap Balance ===== */
+.text-balance {
+  text-wrap: balance;
+}
+
+/* ===== Body Defaults ===== */
+body {
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===== Custom Scrollbar ===== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e2e8f0;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #cbd5e1;
+}
+
+/* Dark mode scrollbar */
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* ===== Textarea Styling ===== */
+textarea {
+  -webkit-text-fill-color: inherit;
+}
+
+textarea::placeholder {
+  -webkit-text-fill-color: currentColor;
+  opacity: 0.4;
+}
+
+/* ===== Print Styles ===== */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* ===== Animation Utilities ===== */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.3s ease-out;
+}
+
+/* ===== Cell Text Optimization ===== */
+.cell-text {
+  text-wrap: balance;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+
+/* ===== Focus States ===== */
+textarea:focus,
+input:focus,
+button:focus-visible {
+  outline: none;
+}
+
+button:focus-visible {
+  box-shadow: 0 0 0 2px var(--focus-color, #06b6d4);
+}
+
+/* ===== Responsive Grid Optimization ===== */
+@media (max-width: 640px) {
+  .font-manda {
+    letter-spacing: -0.02em;
+  }
+}
+
+/* ===== html2canvas Font Preload ===== */
+.preload-fonts::before {
+  content: '';
+  font-family: 'Do Hyeon', sans-serif;
+  position: absolute;
+  left: -9999px;
+}

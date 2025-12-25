@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="description" content="Manda-AI - AI 기반 만다라트 목표 설정 도구. 최종 목표를 입력하면 8개의 하위 목표와 64개의 실행 계획을 자동 생성합니다." />
+    <meta name="theme-color" content="#06B6D4" />
+    <title>Manda-AI - Mandalart Planner</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              manda: ['Do Hyeon', 'sans-serif'],
+              sans: ['Inter', 'sans-serif'],
+            },
+          },
+        },
+        safelist: [
+          'bg-cyan-500', 'bg-rose-500', 'bg-amber-500', 'bg-emerald-500', 'bg-indigo-500',
+          'bg-cyan-50', 'bg-rose-50', 'bg-amber-50', 'bg-emerald-50', 'bg-indigo-50',
+          'bg-cyan-100', 'bg-rose-100', 'bg-amber-100', 'bg-emerald-100', 'bg-indigo-100',
+          'border-cyan-200', 'border-rose-200', 'border-amber-200', 'border-emerald-200', 'border-indigo-200',
+          'border-cyan-300', 'border-rose-300', 'border-amber-300', 'border-emerald-300', 'border-indigo-300',
+          'border-cyan-400', 'border-rose-400', 'border-amber-400', 'border-emerald-400', 'border-indigo-400',
+          'text-cyan-500', 'text-rose-500', 'text-amber-500', 'text-emerald-500', 'text-indigo-500',
+          'shadow-cyan-500/20', 'shadow-rose-500/20', 'shadow-amber-500/20', 'shadow-emerald-500/20', 'shadow-indigo-500/20',
+          'shadow-cyan-500/30', 'shadow-rose-500/30', 'shadow-amber-500/30', 'shadow-emerald-500/30', 'shadow-indigo-500/30',
+          'ring-cyan-500/10', 'ring-rose-500/10', 'ring-amber-500/10', 'ring-emerald-500/10', 'ring-indigo-500/10',
+          'ring-cyan-500/20', 'ring-rose-500/20', 'ring-amber-500/20', 'ring-emerald-500/20', 'ring-indigo-500/20',
+          'hover:bg-cyan-600', 'hover:bg-rose-600', 'hover:bg-amber-600', 'hover:bg-emerald-600', 'hover:bg-indigo-600',
+          'hover:border-cyan-300', 'hover:border-rose-300', 'hover:border-amber-300', 'hover:border-emerald-300', 'hover:border-indigo-300',
+        ]
+      };
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- html2canvas -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    
+    <style>
+      /* Base Styles */
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #F8FAFC;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        overflow-x: hidden;
+      }
+      
+      .font-manda {
+        font-family: 'Do Hyeon', sans-serif;
+      }
+      
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #e2e8f0;
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #cbd5e1;
+      }
+      
+      /* Print Styles */
+      @media print {
+        .no-print { display: none !important; }
+      }
+      
+      /* Animation */
+      .animate-fade-in {
+        animation: fadeIn 0.3s ease-out;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-5px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+    </style>
+    
+    <script type="importmap">
+    {
+      "imports": {
+        "react/": "https://esm.sh/react@^19.0.0/",
+        "react": "https://esm.sh/react@^19.0.0",
+        "react-dom/": "https://esm.sh/react-dom@^19.0.0/",
+        "@google/genai": "https://esm.sh/@google/genai@^1.0.0",
+        "lucide-react": "https://esm.sh/lucide-react@^0.460.0",
+        "zustand": "https://esm.sh/zustand@^5.0.0",
+        "zustand/": "https://esm.sh/zustand@^5.0.0/"
+      }
+    }
+    </script>
+    <link rel="stylesheet" href="/index.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

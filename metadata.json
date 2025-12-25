@@ -1,0 +1,5 @@
+{
+  "name": "Manda-AI",
+  "description": "An AI-powered Mandalart planner that automatically generates core goals and actionable tasks using Gemini Pro.",
+  "requestFramePermissions": []
+}
