@@ -53,7 +53,7 @@ const App: React.FC = () => {
           // Mobile optimization
           windowWidth: gridRef.current.scrollWidth,
           windowHeight: gridRef.current.scrollHeight,
-          // Font rendering
+          // Font rendering and textarea fix for line breaks
           onclone: (clonedDoc: Document) => {
             // Ensure fonts are applied in cloned document
             const style = clonedDoc.createElement('style');
@@ -62,6 +62,33 @@ const App: React.FC = () => {
               .font-manda { font-family: 'Do Hyeon', sans-serif !important; }
             `;
             clonedDoc.head.appendChild(style);
+
+            // Replace textareas with divs to preserve line breaks
+            const textareas = clonedDoc.querySelectorAll('textarea');
+            textareas.forEach((textarea) => {
+              const div = clonedDoc.createElement('div');
+
+              // Copy all computed styles
+              const computedStyle = window.getComputedStyle(textarea);
+              div.style.cssText = computedStyle.cssText;
+
+              // Ensure text wrapping and alignment
+              div.style.whiteSpace = 'pre-wrap';
+              div.style.wordBreak = 'keep-all';
+              div.style.display = 'flex';
+              div.style.alignItems = 'center';
+              div.style.justifyContent = 'center';
+              div.style.textAlign = 'center';
+              div.style.overflow = 'visible';
+              div.style.height = 'auto';
+              div.style.minHeight = '100%';
+
+              // Set the text content (preserves line breaks)
+              div.textContent = textarea.value || textarea.placeholder;
+
+              // Replace textarea with div
+              textarea.parentNode?.replaceChild(div, textarea);
+            });
           }
         });
 
